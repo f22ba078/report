@@ -34,10 +34,17 @@
             } else if (kigo == "*") {
                 result = num1 * num2;
             } else if (kigo == "/") {
-                result = num1 / num2;
+                if (num2 == 0) {
+                    alert("0除算はできないよ")
+                    result ="error"
+                } else {
+                    result = num1 / num2;
+                }
             } else {
                 result = "error";
             }//できたよ
+
+
 
 
 
