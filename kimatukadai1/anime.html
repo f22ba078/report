@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アニメ紹介</title>
+    <style>
+        body{
+            color:#fefbfb;
+            background-color: rgb(50, 51, 51);
+        }
+        h1 {
+            text-align: center;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* CSS for CodePen */
+        .accordion {
+            margin-top: 10px;
+        }
+
+        .accordion__container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .accordion__title {
+            background-color: rgb(90, 178, 249);
+            border: 0px solid transparent;
+            color: #fff;
+            font-size: 1.25em;
+            padding: .625em .625em .625em 2em;
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .accordion__title::before,
+        .accordion__title::after {
+            content: '';
+            display: block;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            width: 15px;
+            height: 2px;
+            right: 25px;
+        }
+
+        .accordion__title::after {
+            transform: rotate(90deg);
+            transition-duration: .3s;
+        }
+
+        .accordion__title:hover,
+        .accordion__title:active,
+        .accordion__title.is-active {
+            background-color: #f8ae5f;
+        }
+
+        .accordion__title.is-active::before {
+            opacity: 0;
+        }
+
+        .accordion__title.is-active::after {
+            transform: rotate(0);
+        }
+
+        .accordion__content {
+            border-left: 1px solid transparent;
+            border-right: 1px solid transparent;
+            padding: 0 1.5em;
+            line-height: 0;
+            height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition-duration: .3s;
+        }
+
+        .accordion__content.is-open {
+            border: 1px solid #070707;
+            padding: .625em 1.5em;
+            line-height: normal;
+            /* numberに書き換える*/
+            height: auto;
+            opacity: 1;
+        }
+
+        #btn{
+            text-align: center;
+            font-size:20px;
+            
+        }
+      
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const title = document.querySelectorAll('.js-accordion-title');
+
+            for (let i = 0; i < title.length; i++) {
+                let titleEach = title[i];
+                let content = titleEach.nextElementSibling;
+                titleEach.addEventListener('click', () => {
+                    titleEach.classList.toggle('is-active');
+                    content.classList.toggle('is-open');
+                });
+            }
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <h1>大好きなアニメランキング!!</h1>
+    <section class="accordion">
+        <div class="accordion__container">
+            <h4 class="accordion__title js-accordion-title">No.1</h4>
+            <div class="accordion__content"><h3>NARUTO疾風伝</h3><br>年代問わず人気のナルト疾風伝!ナルトは私の青春のバイブルです！
+                <br>「ますっぐ自分の言葉は曲げない」という言葉は、私が大事にしていきたいナルトの名台詞です。<br>興味があったらぜひ見てみてください！</div>
+            <br>
+            <h4 class="accordion__title js-accordion-title">No.2</h4>
+            <div class="accordion__content"><h3>ダーリン・イン・ザ・フランキス</h3><br>この作品は世界観がとても独特で、アッと驚く描写がされていたり、
+                一風変わった世界観がとても魅力的な作品です。<br>大迫力のアクションシーンも思春期の少年少女たちが織り成す感情の変化もどれも繊細に描かれていて
+                見ていて飽きることのない作品です！</div>
+            <br>
+            <h4 class="accordion__title js-accordion-title">No.3</h4>
+            <div class="accordion__content"><h3>ぼっち・ざ・ろっく</h3><br>2022年に放送されたまだ新しめの作品ですが、
+                友達を作るのが苦手なボッチちゃんがバンドを組んだことを機に成長していく物語です。
+                <br>中でもギターのシーンは迫力がありとにかくかっこいいです！
+                作中の中で流れる音楽も素敵なものばかりなので興味があったらぜひ見てみてください!!</div>
+        </div><!-- accordion__container -->
+    </section><!-- /.accordion -->
+    <br><br><br><br><br><br><br><br><br>
+    <p id="btn" onmouseover ="location.href='syokai.html'">topページに戻る</p>
+</body>
+
+</html>

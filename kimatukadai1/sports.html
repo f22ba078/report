@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スポーツ</title>
+    <script>
+        //ボタンが押下されたとき正解を表示する
+        function pushButton (){
+            let ans = document.getElementById("txt").value;
+            if(ans == "あらびき"){
+                alert("正解！");
+                
+            }else if(ans =="えんぴつ"){
+                alert("正解！");
+                
+            }else if(ans =="とんかつ"){
+                alert("正解！");
+                
+            }else{
+                alert("不正解！");
+            }
+          
+        }
+    </script>
+    <style>
+        h1 {
+            text-align:center;
+        }
+
+        h2 {
+            position:absolute;
+            font-size: 130px;
+            top:50px;
+            bottom:0;
+            left: 30%;
+            right:20% ;
+            margin: auto;
+            width:50%;
+        }
+
+        h3{
+            text-align:center;
+        }
+
+        #btn{
+            text-align: center;
+        }
+
+        .exam{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>重なっている３つの単語を当てろ‼</h1>
+    <h2>えんぴつ</h2>
+    <h2>とんかつ</h2>
+    <h2>あらびき</h2>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <h3>下に書き込んでね↓</h3><br><br><br><br>
+    
+    <div class="exam">
+        <input id = "txt" type="text">
+        <br>
+        <input id = "btn" type="button" value="送信" onclick="pushButton()"> 
+        <br><br><br>
+        <p id="bt" onmouseover ="location.href='syokai.html'">topページに戻る</p>
+    </div>
+    
+    
+
+</body>
+</html>
